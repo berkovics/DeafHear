@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,17 +13,11 @@ import { BelepesComponent } from './belepes/belepes.component';
 import { RegisztalComponent } from './regisztal/regisztal.component';
 import { FormsModule } from '@angular/forms';
 import { AudiogramComponent } from './audiogram/audiogram.component';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-
-const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'szabaly', component: SzabalyComponent},
-  {path: 'vizsgalat', component: VizsgalatComponent},
-  {path: 'belepes', component: BelepesComponent},
-  {path: 'regisztal', component: RegisztalComponent},
-  {path: 'audiogram', component: AudiogramComponent},
-]
+import { environment } from './env';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VarifyEmailComponent } from './varify-email/varify-email.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +27,18 @@ const appRoutes: Routes = [
     BelepesComponent,
     RegisztalComponent,
     AudiogramComponent,
-    HomeComponent
+    HomeComponent,
+    WelcomeComponent,
+    ForgotPasswordComponent,
+    VarifyEmailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
