@@ -17,7 +17,7 @@ export class ForgotPasswordComponent {
     this.auth.forgotPassword(this.email).then(
       () => {
         this.router.navigate(['/varify-email'])
-      }, err => {
+      }, (err:any) => {
         alert("Valami elromlott")
       }
     )

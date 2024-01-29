@@ -30,7 +30,7 @@ export class RegisztalComponent {
         alert("Sikeres regisztráció")
         this.router.navigate(['/belepes'])
         this.sendEmailForVarification(res.user)
-      }, err => {
+      }, (err:any) => {
         alert(err.message)
         this.router.navigate(['/regisztal'])
       }

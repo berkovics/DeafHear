@@ -16,7 +16,7 @@ export class WelcomeComponent {
       () => {
         localStorage.removeItem('token')
         this.router.navigate(['/belepes'])
-      }, err => {
+      }, (err:any) => {
         alert(err.message)
       }
     )
