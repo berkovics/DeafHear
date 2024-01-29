@@ -1,5 +1,5 @@
 /*Berkovics Gellért*/
-/*
+
 function greet() {
   function startRed() {
     if (0<=r && r<20000) {
@@ -88,4 +88,4 @@ function greet() {
   
     alert("Köszönjük!");
   }
-}*/
+}

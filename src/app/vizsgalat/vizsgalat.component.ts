@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-//declare function greet(): void
+declare function greet(): void
 
 @Component({
   selector: 'app-vizsgalat',
@@ -10,6 +10,6 @@ import { Component } from '@angular/core';
 export class VizsgalatComponent {
 
   constructor() {
-    //greet()
+    greet()
   }
 }
