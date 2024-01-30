@@ -29,6 +29,7 @@
               "src/styles.css"
             ],
             "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/vizsgalatok.js"
             ]
           },

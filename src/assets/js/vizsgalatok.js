@@ -1,5 +1,5 @@
 /*Berkovics Gellért*/
-
+/*
 function greet() {
   var r = 0;
   var b = 0;
@@ -93,4 +93,4 @@ function greet() {
   
     alert("Köszönjük!");
   }
-}
+}*/
