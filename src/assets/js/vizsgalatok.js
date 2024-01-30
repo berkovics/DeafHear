@@ -1,6 +1,11 @@
 /*Berkovics Gellért*/
 
 function greet() {
+  var r = 0;
+  var b = 0;
+  var r2;
+  var b2;
+
   function startRed() {
     if (0<=r && r<20000) {
       if (0<=r && r<8000) {
