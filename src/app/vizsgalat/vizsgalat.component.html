@@ -7,32 +7,32 @@
         </div>
 
         <div class="range">
-            <input type="range" value="0" min="0" max="20000" class="sliderRed" id="rangeChechedRed"><br />
-            <input type="range" value="0" min="0" max="20000" class="sliderBlue" id="rangeChechedBlue">
+            <input [(ngModel)]="redRange" type="range" value="0" min="0" max="20000" class="sliderRed" id="rangeChechedRed"><br />
+            <input [(ngModel)]="blueRange" type="range" value="0" min="0" max="20000" class="sliderBlue" id="rangeChechedBlue">
         </div>
 
         <div class="button">
             <form action="">
                 <label for="leftcolor" class="fontred radio-inline">
-                    <input type="radio" id="leftcolor" name="radio" value="Bal" onchange="redColor()">&nbsp; Bal
+                    <input [(ngModel)]="red" type="radio" id="leftcolor" name="radio" value="Bal">&nbsp; Bal
                 </label>
                 <br />
                 <label for="rightcolor" class="fontblue radio-inline">
-                    <input type="radio" id="rightcolor" name="radio" value="Jobb" onchange="blueColor()">&nbsp; Jobb
+                    <input [(ngModel)]="blue" type="radio" id="rightcolor" name="radio" value="Jobb">&nbsp; Jobb
                 </label>
                 <br /><br />
-                <button type="button" class="hear" onclick="hear()">Hallom</button><br />
-                <button type="button" class="no-hear" onclick="nohear()">Nem hallom</button><br />
-                <button type="button" class="ertekeles" onclick="ertekeles()">Értékelés</button><br />
+                <button type="button" class="hear" (click)="hear()">Hallom</button><br />
+                <button type="button" class="no-hear" (click)="nohear()">Nem hallom</button><br />
+                <button type="button" class="ertekeles" (click)="ertekeles()">Értékelés</button><br />
             </form>
 
             <div class="rengaValue">
-                <span id="rangeBlueValue">0 Hz</span>
-                <span id="blueValue"></span><br />
-                <span id="rangeRedValue">0 Hz</span>
-                <span id="redValue"></span>
+                <span id="rangeBlueValue">{{blueValue}} Hz</span>
+                <span id="blueValue">{{blueValue2}}</span><br />
+                <span id="rangeRedValue">{{redValue}} Hz</span>
+                <span id="redValue">{{redValue2}}</span>
             </div>
         </div>
     </div>
 </body>
-<script src="../../assets/js/vizsgalatok.js" defer></script>
+<!--<script src="../../assets/js/vizsgalatok.js" defer></script>-->
