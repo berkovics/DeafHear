@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class BelepesComponent {
  
-  email:any = ""
-  password:any = ""
+  email:string = ""
+  password:string = ""
 
   constructor(private auth:AuthService, private router:Router) {}
  
