@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 })
 export class RegisztalComponent {
 
-  email:any = ""
-  password:any = ""
+  email:string = ""
+  password:string = ""
 
   constructor(private auth:AuthService, private router:Router) {}
  
   register() {
-    if (this.email == "") {
+    if (this.email === "") {
       alert("Kérem írja be az email címet")
       return
     }
 
-    if (this.password == "") {
+    if (this.password === "") {
       alert("Kérem írja be a jelszót")
       return
     }
@@ -29,7 +29,7 @@ export class RegisztalComponent {
       (res:any) => {
         alert("Sikeres regisztráció")
         this.router.navigate(['/belepes'])
-        this.sendEmailForVarification(res.user)
+        this.sendemailforvarification(res.user)
       }, (err:any) => {
         alert(err.message)
         this.router.navigate(['/regisztal'])
@@ -40,8 +40,8 @@ export class RegisztalComponent {
     this.password = ""
   }
 
-  sendEmailForVarification(user:any) {
-    return user.sendEmailForVarification().then(
+  sendemailforvarification(user:any) {
+    return user.sendEmailVerification().then(
       (res:any) => {
         this.router.navigate(['/varify-email'])
       }, (err:any) => {

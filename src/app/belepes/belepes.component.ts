@@ -28,7 +28,7 @@ export class BelepesComponent {
     this.auth.belepes(this.email, this.password).then(
       (res:any) => {
         localStorage.setItem('token', 'true')
-        if (res.user?.emailVerified == true) {
+        if (res.user?.emailVerified === true) {
           this.router.navigate(['/welcome'])
         } else {
           this.router.navigate(['/varify-email'])

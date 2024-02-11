@@ -8,19 +8,19 @@ export class AuthService {
 
   constructor(private fireAuth:AngularFireAuth) { }
   
-  belepes(email:any, password:any) {
+  belepes(email:string, password:string) {
     return this.fireAuth.signInWithEmailAndPassword(email, password)
   }
 
-  register(email:any, password:any) {
-    return this.fireAuth.signInWithEmailAndPassword(email, password)
+  register(email:string, password:string) {
+    return this.fireAuth.createUserWithEmailAndPassword(email, password)
   }
 
   loguot() {
     return this.fireAuth.signOut()
   }
 
-  forgotPassword(email:any) {
+  forgotPassword(email:string) {
     return this.fireAuth.sendPasswordResetEmail(email)
   }
 }

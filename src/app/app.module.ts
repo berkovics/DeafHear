@@ -14,10 +14,11 @@ import { RegisztalComponent } from './regisztal/regisztal.component';
 import { FormsModule } from '@angular/forms';
 import { AudiogramComponent } from './audiogram/audiogram.component';
 import { HomeComponent } from './home/home.component';
-import { environment } from './env';
+import { Environment } from './environment';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,10 @@ import { VarifyEmailComponent } from './varify-email/varify-email.component';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(Environment.firebase),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

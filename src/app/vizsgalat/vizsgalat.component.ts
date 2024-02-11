@@ -7,28 +7,30 @@ import { Component } from '@angular/core';
 })
 export class VizsgalatComponent {
   
-  r:any = 0
-  b:any = 0
+  r = 0
+  b = 0
 
   r2:any
   b2:any
 
-  red:any
-  blue:any
+  red = false
+  blue = false
 
   redValue:any = 0
   blueValue:any = 0
 
-  redValue2:any = ""
-  blueValue2:any = ""
+  redValue2 = ""
+  blueValue2 = ""
 
-  redRange:any = 0
-  blueRange:any = 0
+  redRange = 0
+  blueRange = 0
 
   constructor() {}
 
   nohear() {
-    if (this.red = true) {
+    if (!this.red && !this.blue) {
+      alert("Nincs kiválasztva")
+    } else if (this.red) {
       this.r = 0
       this.r2 = setInterval(
         () => {
@@ -51,7 +53,7 @@ export class VizsgalatComponent {
           }
         }, 1
       )
-    } else if (this.blue = true) {
+    } else if (this.blue) {
       this.b = 0
       this.b2 = setInterval(
         () => {
@@ -78,9 +80,9 @@ export class VizsgalatComponent {
   }
 
   hear() {
-    if (this.red = true) {
+    if (this.red) {
       clearInterval(this.r2)
-    } else if (this.blue = true) {
+    } else if (this.blue) {
       clearInterval(this.b2)
     }
   }
