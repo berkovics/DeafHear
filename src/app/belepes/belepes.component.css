@@ -101,6 +101,7 @@ body{
     font-size: 15px;
     text-align: center;
     margin: 20px 0 15px;
+    padding-bottom: 15px;
 }
 
 .register-link p a{
@@ -112,4 +113,17 @@ body{
 .register-link p a:hover{
     text-decoration: underline;
     color: white;
+}
+
+.google a{
+    background-color: white;
+    color: black;
+    padding-left: 58px;
+    padding-right: 58px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+    font-weight: bold;
+    border-radius: 40px;
+    box-shadow: 10px;
+    text-decoration: none;
 }

@@ -42,4 +42,15 @@ export class BelepesComponent {
     this.email = ""
     this.password = ""
   }
+
+  signInWithGoogle(){
+    this.auth.signInGoogle().then(
+      (res:any) => {
+        this.router.navigate(['/welcome'])
+        localStorage.setItem('token', JSON.stringify(res.user?.uid))
+      }, (err:any) => {
+        alert(err.message)
+      }
+    )
+  }
 }
