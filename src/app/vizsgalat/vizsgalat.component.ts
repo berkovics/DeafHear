@@ -25,7 +25,11 @@ export class VizsgalatComponent {
   redRange = 0
   blueRange = 0
 
-  constructor() {}
+  audio: HTMLAudioElement
+
+  constructor() {
+    this.audio = new Audio("../../assets/hang/hear.mp3");
+  }
 
   nohear() {
     if (!this.red && !this.blue) {
@@ -50,6 +54,7 @@ export class VizsgalatComponent {
             this.r++
             this.redRange = this.r
             this.redValue = this.r
+            this.audio.play()
           }
         }, 1
       )
@@ -73,6 +78,7 @@ export class VizsgalatComponent {
             this.b++
             this.blueRange = this.b
             this.blueValue = this.b
+            this.audio.play()
           }
         }, 1
       )
@@ -82,8 +88,12 @@ export class VizsgalatComponent {
   hear() {
     if (this.red) {
       clearInterval(this.r2)
+      this.audio.pause()
+      this.audio.currentTime = 0
     } else if (this.blue) {
       clearInterval(this.b2)
+      this.audio.pause()
+      this.audio.currentTime = 0
     }
   }
 
