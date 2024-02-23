@@ -35,21 +35,20 @@ export class VizsgalatComponent {
     if (!this.red && !this.blue) {
       alert("Nincs kiválasztva")
     } else if (this.red) {
-      this.r = 0
       this.r2 = setInterval(
         () => {
           if (0<=this.r && this.r<20000) {
             if (0<=this.r && this.r<8000) {
               this.r++
-              this.redValue2 = "Kicsi hallom"
+              this.redValue2 = "Kicsi"
             }
-            if (4000<=this.r && this.r<15000) {
+            if (8000<=this.r && this.r<15000) {
               this.r++
-              this.redValue2 = "Közepes hallom"
+              this.redValue2 = "Közepes"
             }
-            if (7000<=this.r && this.r<20000) {
+            if (15000<=this.r && this.r<20000) {
               this.r++
-              this.redValue2 = "Nagyon hallom"
+              this.redValue2 = "Nagyon"
             }
             this.r++
             this.redRange = this.r
@@ -59,21 +58,20 @@ export class VizsgalatComponent {
         }, 1
       )
     } else if (this.blue) {
-      this.b = 0
       this.b2 = setInterval(
         () => {
           if (0<=this.b && this.b<20000) {
-            if (0<=this.b && this.b<4000) {
+            if (0<=this.b && this.b<8000) {
               this.b++
-              this.blueValue2 = "Kicsi hallom"
+              this.blueValue2 = "Kicsi"
             }
-            if (4000<=this.b && this.b<7000) {
+            if (8000<=this.b && this.b<15000) {
               this.b++
-              this.blueValue2 = "Közepes hallom"
+              this.blueValue2 = "Közepes"
             }
-            if (7000<=this.b && this.b<20000) {
+            if (15000<=this.b && this.b<20000) {
               this.b++
-              this.blueValue2 = "Nagyon hallom"
+              this.blueValue2 = "Nagyon"
             }
             this.b++
             this.blueRange = this.b
