@@ -13,8 +13,7 @@ export class VizsgalatComponent {
   r2:any
   b2:any
 
-  red = false
-  blue = false
+  selected = ""
 
   redValue:any = 0
   blueValue:any = 0
@@ -32,9 +31,10 @@ export class VizsgalatComponent {
   }
 
   nohear() {
-    if (!this.red && !this.blue) {
+    if (!this.selected) {
       alert("Nincs kiválasztva")
-    } else if (this.red) {
+    } else if (this.selected == 'red') {
+      this.r = 0
       this.r2 = setInterval(
         () => {
           if (0<=this.r && this.r<20000) {
@@ -57,7 +57,8 @@ export class VizsgalatComponent {
           }
         }, 1
       )
-    } else if (this.blue) {
+    } else {
+      this.b = 0
       this.b2 = setInterval(
         () => {
           if (0<=this.b && this.b<20000) {
@@ -84,11 +85,13 @@ export class VizsgalatComponent {
   }
 
   hear() {
-    if (this.red) {
+    if (!this.selected) {
+      alert("Nincs kiválasztva")
+    } else if (this.selected  == 'red') {
       clearInterval(this.r2)
       this.audio.pause()
       this.audio.currentTime = 0
-    } else if (this.blue) {
+    } else {
       clearInterval(this.b2)
       this.audio.pause()
       this.audio.currentTime = 0
@@ -109,8 +112,7 @@ export class VizsgalatComponent {
     clearInterval(this.r2)
     clearInterval(this.b2)
 
-    this.red = false
-    this.blue = false
+    this.selected = "";
 
     this.redRange = 0
     this.redValue = 0

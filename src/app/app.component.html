@@ -8,7 +8,9 @@
                 <li><a href="/home">Home</a></li>
                 <li><a href="/szabaly">Szabályok</a></li>
                 <li><a href="/vizsgalat">Vizsgálat</a></li>
-                <li><a href="/belepes">bejelentekezi</a></li>
+                <li><a *ngIf="!loggedIn()" href="/belepes">Bejelentekezi</a></li>
+                <li><a *ngIf="!loggedIn()" href="/regisztal">Regisztráciő</a></li>
+                <li><a *ngIf="loggedIn()" (click)="logOut()">Kijelentekezi</a></li>
             </ul>
         </nav>
     </div>

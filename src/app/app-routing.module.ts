@@ -6,7 +6,6 @@ import { VizsgalatComponent } from './vizsgalat/vizsgalat.component';
 import { BelepesComponent } from './belepes/belepes.component';
 import { RegisztalComponent } from './regisztal/regisztal.component';
 import { AudiogramComponent } from './audiogram/audiogram.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
 
@@ -17,7 +16,6 @@ const routes: Routes = [
   {path: 'belepes', component: BelepesComponent},
   {path: 'regisztal', component: RegisztalComponent},
   {path: 'audiogram', component: AudiogramComponent},
-  {path: 'welcome', component: WelcomeComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'varify-email', component: VarifyEmailComponent}
 ];

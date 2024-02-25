@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { AudiogramComponent } from './audiogram/audiogram.component';
 import { HomeComponent } from './home/home.component';
 import { Environment } from './environment';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
 import { AuthService } from './auth.service';
@@ -29,7 +28,6 @@ import { AuthService } from './auth.service';
     RegisztalComponent,
     AudiogramComponent,
     HomeComponent,
-    WelcomeComponent,
     ForgotPasswordComponent,
     VarifyEmailComponent
   ],

@@ -28,11 +28,8 @@ export class BelepesComponent {
     this.auth.belepes(this.email, this.password).then(
       (res:any) => {
         localStorage.setItem('token', 'true')
-        if (res.user?.emailVerified === true) {
-          this.router.navigate(['/welcome'])
-        } else {
-          this.router.navigate(['/varify-email'])
-        }
+        this.router.navigate(['/home'])
+        alert("Welcome")
       }, (err:any) => {
         alert(err.message)
         this.router.navigate(['/belepes'])
@@ -46,8 +43,9 @@ export class BelepesComponent {
   signInWithGoogle(){
     this.auth.signInGoogle().then(
       (res:any) => {
-        this.router.navigate(['/welcome'])
+        this.router.navigate(['/home'])
         localStorage.setItem('token', JSON.stringify(res.user?.uid))
+        alert("Welcome")
       }, (err:any) => {
         alert(err.message)
       }

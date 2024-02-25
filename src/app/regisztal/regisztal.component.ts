@@ -29,7 +29,6 @@ export class RegisztalComponent {
       (res:any) => {
         alert("Sikeres regisztráció")
         this.router.navigate(['/belepes'])
-        this.sendemailforvarification(res.user)
       }, (err:any) => {
         alert(err.message)
         this.router.navigate(['/regisztal'])
@@ -38,15 +37,5 @@ export class RegisztalComponent {
 
     this.email = ""
     this.password = ""
-  }
-
-  sendemailforvarification(user:any) {
-    return user.sendEmailVerification().then(
-      (res:any) => {
-        this.router.navigate(['/varify-email'])
-      }, (err:any) => {
-        alert("Valami elromlott. Nem tud levelet küldeni az e-mail címére.")
-      }
-    )
   }
 }

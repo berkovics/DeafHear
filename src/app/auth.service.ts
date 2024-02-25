@@ -17,7 +17,7 @@ export class AuthService {
     return this.fireAuth.createUserWithEmailAndPassword(email, password)
   }
 
-  loguot() {
+  logout() {
     return this.fireAuth.signOut()
   }
 
