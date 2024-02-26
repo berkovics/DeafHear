@@ -10,6 +10,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'szabaly', component: SzabalyComponent},
   {path: 'vizsgalat', component: VizsgalatComponent},
