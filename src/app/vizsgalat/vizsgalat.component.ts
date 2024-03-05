@@ -27,7 +27,7 @@ export class VizsgalatComponent {
   audio: HTMLAudioElement
 
   constructor() {
-    this.audio = new Audio("../../assets/hang/hear.mp3");
+    this.audio = new Audio("../../assets/hang/hearing.mp3");
   }
 
   nohear() {
