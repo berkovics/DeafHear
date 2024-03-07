@@ -27,7 +27,7 @@ export class VizsgalatComponent {
   audio: HTMLAudioElement
 
   constructor() {
-    this.audio = new Audio("../../assets/hang/hearing.mp3");
+    this.audio = new Audio("../../assets/hang/videoplayback.m4a");
   }
 
   nohear() {
@@ -100,13 +100,11 @@ export class VizsgalatComponent {
 
   ertekeles() {
     alert(
-      this.redValue = "Bal:  " + this.r + " Hz  " +
-      this.redValue2
+      "Bal:  " + this.r + " Hz  " + this.redValue2
     )
   
     alert(
-      this.blueValue = "Jobb:  " + this.b + " Hz  " +
-      this.blueValue2
+      "Jobb:  " + this.b + " Hz  " + this.blueValue2
     )
   
     clearInterval(this.r2)
