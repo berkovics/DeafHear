@@ -11,6 +11,7 @@ export class RegisztalComponent {
 
   email:string = ""
   password:string = ""
+  name:string = ""
 
   constructor(private auth:AuthService, private router:Router) {}
  
@@ -22,6 +23,11 @@ export class RegisztalComponent {
 
     if (this.password === "") {
       alert("Kérem írja be a jelszót")
+      return
+    }
+
+    if (this.name === "") {
+      alert("Kérem írja be a Név")
       return
     }
 
