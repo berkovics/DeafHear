@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-belepes',
@@ -16,12 +17,18 @@ export class BelepesComponent {
  
   login() {
     if (this.email == "") {
-      alert("Kérem írja be az email címet")
+      Swal.fire({
+        icon: "warning",
+        title: "Kérem írja be az email címet"
+      })
       return
     }
 
     if (this.password == "") {
-      alert("Kérem írja be a jelszót")
+      Swal.fire({
+        icon: "warning",
+        title: "Kérem írja be a jelszót"
+      })
       return
     }
 
@@ -29,9 +36,15 @@ export class BelepesComponent {
       (res:any) => {
         localStorage.setItem('token', 'true')
         this.router.navigate(['/home'])
-        alert("Welcome")
+        Swal.fire({
+          icon: "success",
+          title: "Welcome"
+        })
       }, (err:any) => {
-        alert(err.message)
+        Swal.fire({
+          icon: "error",
+          title: err.message
+        })
         this.router.navigate(['/belepes'])
       }
     )
@@ -45,9 +58,15 @@ export class BelepesComponent {
       (res:any) => {
         this.router.navigate(['/home'])
         localStorage.setItem('token', JSON.stringify(res.user?.uid))
-        alert("Welcome")
+        Swal.fire({
+          icon: "success",
+          title: "Welcome"
+        })
       }, (err:any) => {
-        alert(err.message)
+        Swal.fire({
+          icon: "error",
+          title: err.message
+        })
       }
     )
   }

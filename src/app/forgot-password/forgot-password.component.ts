@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-forgot-password',
@@ -18,7 +19,10 @@ export class ForgotPasswordComponent {
       () => {
         this.router.navigate(['/varify-email'])
       }, (err:any) => {
-        alert("Valami elromlott")
+        Swal.fire({
+          icon: "error",
+          title: "Valami elromlott"
+        })
       }
     )
     this.email = ""

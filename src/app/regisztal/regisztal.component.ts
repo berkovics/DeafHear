@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-regisztal',
@@ -17,30 +18,46 @@ export class RegisztalComponent {
  
   register() {
     if (this.email === "") {
-      alert("Kérem írja be az email címet")
+      Swal.fire({
+        icon: "warning",
+        title: "Kérem írja be az email címet"
+      })
       return
     }
 
     if (this.password === "") {
-      alert("Kérem írja be a jelszót")
+      Swal.fire({
+        icon: "warning",
+        title: "Kérem írja be a jelszót"
+      })
       return
     }
 
     if (this.name === "") {
-      alert("Kérem írja be a Név")
+      Swal.fire({
+        icon: "warning",
+        title: "Kérem írja be a Név"
+      })
       return
     }
 
     this.auth.register(this.email, this.password).then(
       (res:any) => {
-        alert("Sikeres regisztráció")
+        Swal.fire({
+          icon: "success",
+          title: "Sikeres regisztráció"
+        })
         this.router.navigate(['/belepes'])
       }, (err:any) => {
-        alert(err.message)
+        Swal.fire({
+          icon: "error",
+          title: err.message
+        })
         this.router.navigate(['/regisztal'])
       }
     )
 
+    this.name = ""
     this.email = ""
     this.password = ""
   }

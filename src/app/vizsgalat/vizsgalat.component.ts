@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-vizsgalat',
@@ -26,13 +27,21 @@ export class VizsgalatComponent {
 
   audio: HTMLAudioElement
 
+  redkep: HTMLImageElement
+  bluekep: HTMLImageElement
+
   constructor() {
     this.audio = new Audio("../../assets/hang/videoplayback.m4a");
+    this.redkep = new Image()
+    this.bluekep = new Image()
   }
 
   nohear() {
     if (!this.selected) {
-      alert("Nincs kiválasztva")
+      Swal.fire({
+        icon: "warning",
+        title: "Nincs kiválasztva!"
+      })
     } else if (this.selected == 'red') {
       this.r = 0
       this.r2 = setInterval(
@@ -41,14 +50,17 @@ export class VizsgalatComponent {
             if (0<=this.r && this.r<8000) {
               this.r++
               this.redValue2 = "Kicsi"
+              this.redkep.src = "../../assets/image/redkep1.png"
             }
             if (8000<=this.r && this.r<15000) {
               this.r++
               this.redValue2 = "Közepes"
+              this.redkep.src = "../../assets/image/redkep2.png"
             }
             if (15000<=this.r && this.r<20000) {
               this.r++
               this.redValue2 = "Nagyon"
+              this.redkep.src = "../../assets/image/redkep3.png"
             }
             this.r++
             this.redRange = this.r
@@ -65,14 +77,17 @@ export class VizsgalatComponent {
             if (0<=this.b && this.b<8000) {
               this.b++
               this.blueValue2 = "Kicsi"
+              this.bluekep.src = "../../assets/image/bluekep1.png"
             }
             if (8000<=this.b && this.b<15000) {
               this.b++
               this.blueValue2 = "Közepes"
+              this.bluekep.src = "../../assets/image/bluekep2.png"
             }
             if (15000<=this.b && this.b<20000) {
               this.b++
               this.blueValue2 = "Nagyon"
+              this.bluekep.src = "../../assets/image/bluekep3.png"
             }
             this.b++
             this.blueRange = this.b
@@ -86,7 +101,10 @@ export class VizsgalatComponent {
 
   hear() {
     if (!this.selected) {
-      alert("Nincs kiválasztva")
+      Swal.fire({
+        icon: "warning",
+        title: "Nincs kiválasztva!"
+      })
     } else if (this.selected  == 'red') {
       clearInterval(this.r2)
       this.audio.pause()
@@ -99,28 +117,48 @@ export class VizsgalatComponent {
   }
 
   ertekeles() {
-    alert(
-      "Bal:  " + this.r + " Hz  " + this.redValue2
-    )
+    if (!this.selected) {
+      Swal.fire({
+        icon: "warning",
+        title: "Nincs kiválasztva!"
+      })
+    } else {
+      Swal.fire({
+        title: "Bal: " + this.r + " Hz " + this.redValue2,
+        imageUrl: this.redkep.src,
+        imageWidth: 450,
+        imageHeight: 250,
+      }).then(
+        () => {
+          Swal.fire({
+            title: "Jobb: " + this.b + " Hz " + this.blueValue2,
+            imageUrl: this.bluekep.src,
+            imageWidth: 450,
+            imageHeight: 250,
+          }).then(
+            () => {
+              Swal.fire({
+                icon: "success",
+                title: "Köszönjük!",
+              })
+            }
+          )
+        }
+      )
   
-    alert(
-      "Jobb:  " + this.b + " Hz  " + this.blueValue2
-    )
-  
-    clearInterval(this.r2)
-    clearInterval(this.b2)
+      clearInterval(this.r2)
+      clearInterval(this.b2)
 
-    this.selected = "";
+      this.selected = "";
 
-    this.redRange = 0
-    this.redValue = 0
+      this.redRange = 0
+      this.redValue = 0
 
-    this.blueRange = 0
-    this.blueValue = 0
+      this.blueRange = 0
+      this.blueValue = 0
 
-    this.redValue2 = ""
-    this.blueValue2 = ""
-  
-    alert("Köszönjük!")
+      this.redValue2 = ""
+      this.blueValue2 = ""
+    }
   }
 }

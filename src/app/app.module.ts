@@ -18,6 +18,7 @@ import { Environment } from './environment';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
 import { AuthService } from './auth.service';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AuthService } from './auth.service';
     NgbModule,
     FormsModule,
     AngularFireModule.initializeApp(Environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    SweetAlert2Module
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
