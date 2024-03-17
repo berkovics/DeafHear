@@ -19,6 +19,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
 import { AuthService } from './auth.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { HttpClientModule } from '@angular/common/http';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AudiogramComponent,
     HomeComponent,
     ForgotPasswordComponent,
-    VarifyEmailComponent
+    VarifyEmailComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +42,10 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FormsModule,
     AngularFireModule.initializeApp(Environment.firebase),
     AngularFireAuthModule,
-    SweetAlert2Module
+    SweetAlert2Module,
+    HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, RegisztalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

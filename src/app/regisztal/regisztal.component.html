@@ -10,8 +10,16 @@
                 <div class="pb panel-body">
                     <form>
                         <div class="form-group">
-                            <label for="name">Name</label><br>
-                            <input type="name" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+                            <label for="name">Név</label><br>
+                            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tajszam">Tajszám</label><br>
+                            <input type="text" class="form-control" id="tajszam" name="tajszam" [(ngModel)]="tajszam" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lakcim">Lakcím</label><br>
+                            <input type="text" class="form-control" id="lakcim" name="lakcim" [(ngModel)]="lakcim" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label><br>

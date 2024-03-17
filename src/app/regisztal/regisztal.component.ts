@@ -13,11 +13,15 @@ export class RegisztalComponent {
   email:string = ""
   password:string = ""
   name:string = ""
+  tajszam:string = ""
+  lakcim:string = ""
+
+  ujUser:any = {}
 
   constructor(private auth:AuthService, private router:Router) {}
  
   register() {
-    if (this.email === "") {
+    if (!this.email) {
       Swal.fire({
         icon: "warning",
         title: "Kérem írja be az email címet"
@@ -25,7 +29,7 @@ export class RegisztalComponent {
       return
     }
 
-    if (this.password === "") {
+    if (!this.password) {
       Swal.fire({
         icon: "warning",
         title: "Kérem írja be a jelszót"
@@ -33,10 +37,26 @@ export class RegisztalComponent {
       return
     }
 
-    if (this.name === "") {
+    if (!this.name) {
       Swal.fire({
         icon: "warning",
         title: "Kérem írja be a Név"
+      })
+      return
+    }
+
+    if (!this.tajszam) {
+      Swal.fire({
+        icon: "warning",
+        title: "Kérem írja be a Tajszám"
+      })
+      return
+    }
+
+    if (!this.lakcim) {
+      Swal.fire({
+        icon: "warning",
+        title: "Kérem írja be a Lakcím"
       })
       return
     }
@@ -57,7 +77,11 @@ export class RegisztalComponent {
       }
     )
 
+    this.auth.postUser(this.ujUser)
+
     this.name = ""
+    this.tajszam = ""
+    this.lakcim = ""
     this.email = ""
     this.password = ""
   }

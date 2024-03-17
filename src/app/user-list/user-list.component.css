@@ -1,0 +1,9 @@
+.container{
+    margin-top: 50px;
+}
+
+.fontRow{
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
