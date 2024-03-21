@@ -124,23 +124,33 @@ export class VizsgalatComponent {
       })
     } else {
       Swal.fire({
-        title: "Bal: " + this.r + " Hz " + this.redValue2,
+        title: "Bal: " + this.r + " Hz",
         imageUrl: this.redkep.src,
         imageWidth: 450,
         imageHeight: 250,
       }).then(
         () => {
           Swal.fire({
-            title: "Jobb: " + this.b + " Hz " + this.blueValue2,
+            title: "Jobb: " + this.b + " Hz",
             imageUrl: this.bluekep.src,
             imageWidth: 450,
             imageHeight: 250,
           }).then(
-            () => {
-              Swal.fire({
+            async () => {
+              const {value: message} = await Swal.fire({
                 icon: "success",
                 title: "Köszönjük!",
+                input: "textarea",
+                inputLabel: "Üzenet",
+                inputPlaceholder: "Írja be üzenetét ide...",
+                inputValidator: (value) => {
+                  return !value && "Kérem írja be a üzenet" || null;
+                },
+                showCancelButton: true,
               })
+              if (message) {
+                Swal.fire(`Üzensz: ${message}`);
+              }
             }
           )
         }
