@@ -8,7 +8,7 @@ import { RegisztalComponent } from './regisztal/regisztal.component';
 import { AudiogramComponent } from './audiogram/audiogram.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'audiogram', component: AudiogramComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'varify-email', component: VarifyEmailComponent},
-  {path: 'user-list', component: UserListComponent}
+  {path: 'shop', component: ShopComponent}
 ];
 
 @NgModule({

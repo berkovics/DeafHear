@@ -20,7 +20,7 @@ import { VarifyEmailComponent } from './varify-email/varify-email.component';
 import { AuthService } from './auth.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HttpClientModule } from '@angular/common/http';
-import { UserListComponent } from './user-list/user-list.component';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { UserListComponent } from './user-list/user-list.component';
     HomeComponent,
     ForgotPasswordComponent,
     VarifyEmailComponent,
-    UserListComponent
+    ShopComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +43,9 @@ import { UserListComponent } from './user-list/user-list.component';
     AngularFireModule.initializeApp(Environment.firebase),
     AngularFireAuthModule,
     SweetAlert2Module,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [AuthService, RegisztalComponent],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

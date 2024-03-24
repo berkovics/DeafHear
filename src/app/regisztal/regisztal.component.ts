@@ -16,8 +16,6 @@ export class RegisztalComponent {
   tajszam:string = ""
   lakcim:string = ""
 
-  ujUser:any = {}
-
   constructor(private auth:AuthService, private router:Router) {}
  
   register() {
@@ -76,8 +74,6 @@ export class RegisztalComponent {
         this.router.navigate(['/regisztal'])
       }
     )
-
-    this.auth.postUser(this.ujUser)
 
     this.name = ""
     this.tajszam = ""
