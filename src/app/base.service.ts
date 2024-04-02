@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class BaseService {
 
-  serverUrl:any
+  serverUrl = "http://localhost:3000/hearShop"
   private kosar:any = []
   private kosarTartalom = new BehaviorSubject(this.kosar)
 

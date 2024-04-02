@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseService } from '../base.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-shop',
@@ -16,7 +17,10 @@ export class ShopComponent {
   tetelek:any
 
   oszlopok = [
-    {}
+    {key:"id", text:"#", type:"plain"},
+    {key:"price", text:"Ár", type:"number"},
+    {key:"imageUrl", text:"Kép", type:"image"},
+    {key:"name", text:"Név", type:"text"}
   ]
 
   constructor(private base:BaseService) {
@@ -58,8 +62,32 @@ export class ShopComponent {
     let sum = 0
     this.tetelek.forEach(
       (e:any) => {
-        sum += this.keresBolt(e.id).ar * e.db      
+        sum += this.keresBolt(e.id).price * e.db      
     });
     return sum
+  }
+
+  async fizetes(){
+    const inputOptions = {
+      "Készpénz": "Készpénz",
+      "Bankkártya": "Bankkártya"
+    }
+
+    const { value: fizet } = await Swal.fire({
+      title: this.osszesen() + " Ft",
+      input: "radio",
+      inputOptions,
+      inputValidator : (value) => {
+        return !value && "Valamit választani kell!"
+      },
+      showCancelButton: true
+    })
+
+    if (fizet) {
+      Swal.fire({ 
+        title: `A következőket választottad: ${fizet}`,
+        icon: "success"
+      })
+    }
   }
 }
