@@ -1,4 +1,13 @@
 .row{
     margin-top: 20px;
     margin-right: 50px;
+    margin-left: 50px;
+}
+
+#masodikoszlop{
+    margin-top: 40px;
+}
+
+body{
+    background-color: aqua;
 }

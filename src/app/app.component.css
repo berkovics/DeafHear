@@ -33,6 +33,7 @@
 .navbar ul li {
     display: inline-block;
     margin: 0 5px;
+    line-height: 80px;
 }
 
 .navbar li a{
@@ -44,4 +45,5 @@
 
 .navbar li a:hover{
     background-color: green;
+    transition: .5s;
 }

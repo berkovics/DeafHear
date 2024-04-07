@@ -1,18 +1,20 @@
 <router-outlet>
-    <div id="header">
-        <nav class="navbar">
-            <div class="logo">
-                <p><span class="close-btn material-symbols-rounded">Hear</span></p>
-            </div>
-            <ul class="links">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/szabaly">Szabályok</a></li>
-                <li><a href="/vizsgalat">Vizsgálat</a></li>
-                <li><a *ngIf="!loggedIn()" href="/belepes">Bejelentekezi</a></li>
-                <li><a *ngIf="!loggedIn()" href="/regisztal">Regisztráciő</a></li>
-                <li><a *ngIf="loggedIn()" (click)="logOut()">Kijelentekezi</a></li>
-                <li><a href="/shop">Vásárlás</a></li>
-            </ul>
-        </nav>
-    </div>
+    <body>
+        <div id="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <p><span class="close-btn material-symbols-rounded">Hear</span></p>
+                </div>
+                <ul class="links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/szabaly">Szabályok</a></li>
+                    <li><a href="/vizsgalat">Vizsgálat</a></li>
+                    <li><a *ngIf="!loggedIn()" href="/belepes">Bejelentekezi</a></li>
+                    <li><a *ngIf="!loggedIn()" href="/regisztal">Regisztráciő</a></li>
+                    <li><a *ngIf="loggedIn()" (click)="logOut()">Kijelentekezi</a></li>
+                    <li><a href="/shop">Vásárlás</a></li>
+                </ul>
+            </nav>
+        </div>
+    </body>
 </router-outlet>

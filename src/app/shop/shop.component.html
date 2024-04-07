@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-9">
+    <div class="col-sm-8" id="elsooszlop">
         <ng-container *ngIf="!showError; else hibuci">
             <ng-container *ngIf="shopping; else varakozas">
                 <div class="container">
@@ -38,7 +38,7 @@
         </ng-template>
     </div>
     
-    <div class="col-sm-3">
+    <div class="col-sm-3" id="masodikoszlop">
         <div class="container">
             <div class="card border-dark mb-3" >
                 <div class="card-header">Kosár</div>
@@ -65,7 +65,9 @@
                     </button>
                 </ng-container>
                 <ng-template #ures>
-                    <p>A kosár üres!</p>
+                    <div class="card-body">
+                        <p class="card-text">A kosár üres!</p>
+                    </div>
                 </ng-template>
             </div>
         </div>

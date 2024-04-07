@@ -13,7 +13,7 @@ export class RegisztalComponent {
   email:string = ""
   password:string = ""
   name:string = ""
-  tajszam:string = ""
+  telefonszam:string = ""
   lakcim:string = ""
 
   constructor(private auth:AuthService, private router:Router) {}
@@ -43,7 +43,7 @@ export class RegisztalComponent {
       return
     }
 
-    if (!this.tajszam) {
+    if (!this.telefonszam) {
       Swal.fire({
         icon: "warning",
         title: "Kérem írja be a Tajszám"
@@ -76,7 +76,7 @@ export class RegisztalComponent {
     )
 
     this.name = ""
-    this.tajszam = ""
+    this.telefonszam = ""
     this.lakcim = ""
     this.email = ""
     this.password = ""
