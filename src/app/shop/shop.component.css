@@ -1,5 +1,5 @@
 .row{
-    margin-top: 20px;
+    margin-top: 1px;
     margin-right: 50px;
     margin-left: 50px;
 }
@@ -9,5 +9,5 @@
 }
 
 body{
-    background-color: aqua;
+    background-image: url("../../assets/image/hearing.jpg");
 }
