@@ -8,25 +8,26 @@
 
 body{
     background-image: url('../../assets/image/hearing2.jpg');
-    color: white;    
+    color: white; 
+    overflow: hidden;
+    width: 100%;
 }
 
-.container{
+.szabaly{
     max-width: 1500px;
-    width:95%;
     margin:0 auto;
     background: transparent;
     backdrop-filter: blur(30px);
     box-shadow: 0 0 10px black;
-    padding: 15px; 
+    padding: 15px;
 }
 
-.container p{
+.szabaly p{
     font-size: 20px;
     padding-bottom: 20px;
 }
 
-.container h3{
+.szabaly h3{
     font-size: 40px;
 }
 

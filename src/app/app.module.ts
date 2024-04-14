@@ -21,6 +21,8 @@ import { AuthService } from './auth.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './shop/shop.component';
+import { UserlistComponent } from './userlist/userlist.component';
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ShopComponent } from './shop/shop.component';
     HomeComponent,
     ForgotPasswordComponent,
     VarifyEmailComponent,
-    ShopComponent
+    ShopComponent,
+    UserlistComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,8 @@ body{
     align-items: center;
     min-height: 100vh;
     background-image: url('../../assets/image/hearing2.jpg');
+    width: 100%;
+    overflow: hidden;
 }
 
 .wrapper{

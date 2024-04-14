@@ -12,6 +12,12 @@ export class AppComponent {
 
   constructor(private auth:AuthService, private router:Router){}
 
+  menuVariable:boolean = false;
+
+  openMenu(){
+    this.menuVariable =! this.menuVariable
+  }
+
   loggedIn(){
     return !!localStorage.getItem('token')
   }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: 'app-regisztal',
@@ -10,13 +11,13 @@ import Swal from 'sweetalert2';
 })
 export class RegisztalComponent {
 
-  email:string = ""
+  email:any = ""
   password:string = ""
-  name:string = ""
-  telefonszam:string = ""
-  lakcim:string = ""
+  name:any = ""
+  telefonszam:any = ""
+  lakcim:any = ""
 
-  constructor(private auth:AuthService, private router:Router) {}
+  constructor(private auth:AuthService, private router:Router, private config:ConfigService) {}
  
   register() {
     if (!this.email) {
@@ -46,7 +47,7 @@ export class RegisztalComponent {
     if (!this.telefonszam) {
       Swal.fire({
         icon: "warning",
-        title: "Kérem írja be a Tajszám"
+        title: "Kérem írja be a Telefonszám"
       })
       return
     }
@@ -74,6 +75,11 @@ export class RegisztalComponent {
         this.router.navigate(['/regisztal'])
       }
     )
+
+    this.config.postData(this.name)
+    this.config.postData(this.telefonszam)
+    this.config.postData(this.lakcim)
+    this.config.postData(this.email)
 
     this.name = ""
     this.telefonszam = ""
