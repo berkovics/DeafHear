@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
-import { ConfigService } from '../config.service';
-import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-vizsgalat',
@@ -32,17 +31,10 @@ export class VizsgalatComponent {
   redkep: HTMLImageElement
   bluekep: HTMLImageElement
 
-  constructor(private config:ConfigService, private router:Router) {
+  constructor(private data:DataService) {
     this.audio = new Audio("../../assets/hang/videoplayback.m4a");
     this.redkep = new Image()
     this.bluekep = new Image()
-
-    this.config.getHallasAll().subscribe(
-      (res) => {
-        this.redValue = res
-        this.blueValue = res
-      }
-    )
   }
 
   nohear() {
@@ -164,9 +156,16 @@ export class VizsgalatComponent {
           )
         }
       )
-
-      this.config.postHallas(this.redValue)
-      this.config.postHallas(this.blueValue)
+/*
+      let body:any = {}
+      body.left = this.redValue
+      body.right = this.blueValue
+      this.data.createNew(body).then(
+        () => {
+          this.redValue = ""
+          this.blueValue = ""
+        }
+      )*/
   
       clearInterval(this.r2)
       clearInterval(this.b2)

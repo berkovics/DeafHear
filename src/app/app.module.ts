@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+//import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,7 @@ import { RegisztalComponent } from './regisztal/regisztal.component';
 import { FormsModule } from '@angular/forms';
 import { AudiogramComponent } from './audiogram/audiogram.component';
 import { HomeComponent } from './home/home.component';
-import { Environment } from './environment';
+import { Environment, /*firebaseDatabase*/  } from './environment';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './varify-email/varify-email.component';
 import { AuthService } from './auth.service';
@@ -48,6 +49,8 @@ import { SortPipe } from './sort.pipe';
     AngularFireAuthModule,
     SweetAlert2Module,
     HttpClientModule,
+    //AngularFireModule.initializeApp(firebaseDatabase.firebase),
+    //AngularFireDatabaseModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
