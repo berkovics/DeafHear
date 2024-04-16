@@ -156,16 +156,16 @@ export class VizsgalatComponent {
           )
         }
       )
-/*
+
       let body:any = {}
       body.left = this.redValue
       body.right = this.blueValue
       this.data.createNew(body).then(
         () => {
-          this.redValue = ""
-          this.blueValue = ""
+          this.redValue = 0
+          this.blueValue = 0
         }
-      )*/
+      )
   
       clearInterval(this.r2)
       clearInterval(this.b2)
